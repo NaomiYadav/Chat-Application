@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application - Demo</title>
+    <link rel="stylesheet" href="public/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .demo-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .chat-app {
+            margin-top: 50px;
+        }
+        
+        .demo-message {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            color: #1976d2;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        🎯 DEMO MODE - Install Node.js and run "npm start" for full functionality
+    </div>
+
+    <!-- Chat Application UI Demo -->
+    <div id="chat-app" class="chat-app">
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="header-left">
+                <h1><i class="fas fa-comments"></i> ChatApp</h1>
+            </div>
+            <div class="header-right">
+                <span class="username-display">DemoUser</span>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-door-open"></i> Chat Rooms</h3>
+                </div>
+                <div class="rooms-list">
+                    <div class="room-item active">
+                        <div class="room-name">
+                            <i class="fas fa-hashtag"></i>
+                            General
+                        </div>
+                        <div class="room-description">General discussion</div>
+                    </div>
+                    <div class="room-item">
+                        <div class="room-name">
+                            <i class="fas fa-hashtag"></i>
+                            Technology
+                        </div>
+                        <div class="room-description">Tech discussions</div>
+                    </div>
+                    <div class="room-item">
+                        <div class="room-name">
+                            <i class="fas fa-hashtag"></i>
+                            Random
+                        </div>
+                        <div class="room-description">Random conversations</div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-footer">
+                    <div class="online-users">
+                        <h4><i class="fas fa-users"></i> Online Users</h4>
+                        <div class="users-list">
+                            <div class="user-item">
+                                <div class="user-status"></div>
+                                <span>DemoUser</span>
+                            </div>
+                            <div class="user-item">
+                                <div class="user-status"></div>
+                                <span>Alice</span>
+                            </div>
+                            <div class="user-item">
+                                <div class="user-status"></div>
+                                <span>Bob</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Chat Area -->
+            <main class="chat-main">
+                <div class="chat-room-header">
+                    <h2>General</h2>
+                    <div class="room-info">
+                        <span>3 users</span>
+                    </div>
+                </div>
+
+                <div class="demo-message">
+                    <i class="fas fa-info-circle"></i>
+                    <strong>Demo Mode:</strong> This shows the UI design. Install Node.js and run the server for real-time chat functionality!
+                </div>
+
+                <div class="messages-container">
+                    <!-- Sample Messages -->
+                    <div class="message">
+                        <div class="message-avatar">A</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="message-username">Alice</span>
+                                <span class="message-time">2:30 PM</span>
+                            </div>
+                            <div class="message-text">Hey everyone! Welcome to the General chat room. How's everyone doing today?</div>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <div class="message-avatar">B</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="message-username">Bob</span>
+                                <span class="message-time">2:31 PM</span>
+                            </div>
+                            <div class="message-text">Hi Alice! I'm doing great, thanks for asking. This chat app looks really modern and professional!</div>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <div class="message-avatar">D</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="message-username">DemoUser (You)</span>
+                                <span class="message-time">2:32 PM</span>
+                            </div>
+                            <div class="message-text">Thanks! This is built with Node.js, Socket.IO, and modern web technologies. Perfect for a BTech internship project!</div>
+                        </div>
+                    </div>
+
+                    <div class="notification">
+                        💡 Tip: Try resizing your browser window to see the responsive design in action!
+                    </div>
+
+                    <div class="message">
+                        <div class="message-avatar">A</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="message-username">Alice</span>
+                                <span class="message-time">2:35 PM</span>
+                            </div>
+                            <div class="message-text">The design is really responsive! I love the gradient theme and smooth animations. Great work on the UI/UX! 🎨</div>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <div class="message-avatar">B</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="message-username">Bob</span>
+                                <span class="message-time">2:36 PM</span>
+                            </div>
+                            <div class="message-text">This would definitely impress in an internship interview. It shows full-stack development skills with real-time features!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typing-indicator">
+                    <span>Alice is typing...</span>
+                </div>
+
+                <div class="message-input-container">
+                    <form class="message-form">
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                placeholder="Type your message... (Demo mode - install Node.js for full functionality)"
+                                autocomplete="off"
+                                value=""
+                            >
+                            <button type="button" class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Demo functionality for showing interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Room switching demo
+            const roomItems = document.querySelectorAll('.room-item');
+            const roomHeader = document.querySelector('.chat-room-header h2');
+            
+            roomItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all items
+                    roomItems.forEach(r => r.classList.remove('active'));
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    // Update header
+                    const roomName = this.querySelector('.room-name').textContent.trim();
+                    roomHeader.textContent = roomName;
+                });
+            });
+            
+            // Message input demo
+            const messageInput = document.querySelector('input[type="text"]');
+            const sendBtn = document.querySelector('.send-btn');
+            
+            sendBtn.addEventListener('click', function() {
+                alert('Demo Mode: Install Node.js and run "npm start" to enable real-time messaging!');
+            });
+            
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    alert('Demo Mode: Install Node.js and run "npm start" to enable real-time messaging!');
+                }
+            });
+            
+            // Logout demo
+            document.querySelector('.logout-btn').addEventListener('click', function() {
+                alert('Demo Mode: This would normally log you out and return to the login screen.');
+            });
+            
+            // Auto-scroll messages
+            const messagesContainer = document.querySelector('.messages-container');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        });
+    </script>
+</body>
+</html>
