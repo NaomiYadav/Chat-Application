@@ -140,11 +140,20 @@ You can modify these in `server.js` or add new ones to the `data/rooms.json` fil
 - Access at `http://localhost:3000`
 
 ### Production Deployment
-1. Set production environment variables
-2. Use a process manager like PM2
-3. Set up a reverse proxy (nginx)
-4. Use a proper database (MongoDB, PostgreSQL)
-5. Implement proper logging and monitoring
+This application is optimized for deployment on **Render** (recommended for Socket.IO apps):
+
+1. **Push to GitHub**
+2. **Connect to Render** ([render.com](https://render.com))
+3. **Deploy as Web Service**
+4. **See detailed guide**: [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md)
+
+**Live Demo**: Once deployed, you'll get a URL like `https://your-app-name.onrender.com`
+
+### Why Render over Vercel?
+- ✅ **Full WebSocket Support**: Perfect for Socket.IO
+- ✅ **Persistent Connections**: Real-time apps work flawlessly  
+- ✅ **Free Tier**: Great for portfolios and demos
+- ✅ **Auto-Deploy**: Updates on every git push
 
 ## 🔒 Security Features
 
